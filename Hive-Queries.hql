@@ -14,7 +14,7 @@ FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION '$LOGS_HDFS_PATH';
 
-CREATE EXTERNAL TABLE external_streaming_content_metadata (
+CREATE TABLE streaming_content_metadata (
     content_id INT,
     title STRING,
     category STRING,
@@ -24,7 +24,7 @@ CREATE EXTERNAL TABLE external_streaming_content_metadata (
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION '/raw/metadata';
+LOCATION '$LOGS_HDFS_PATH';
 
 -- Create the User Dimension Table
 CREATE TABLE dim_users (
